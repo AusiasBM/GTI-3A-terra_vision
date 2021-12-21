@@ -1,0 +1,83 @@
+/* Ausias Bañuls Mahiques */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+:root {
+    --texto: #111111;
+    --principal: #1ab7c3;
+    --secundario: #707070;
+    --blanco: #ffffff;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    /* Sirve para que haga el scroll suave*/
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: url(../imgs/bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.container-fluid{ /* Esto lo ponemos para que el menú lateral de la landing page este totalmente pegado al borde */
+    padding: 0%;
+}
+
+
+.menu_lateral{
+    width: 20rem;
+    height: 100%;
+    position: fixed;
+}
+
+
+h1{
+    font-size: 80px;
+    font-weight: 700;
+}
+
+h2{
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.logo {
+    width: 170px;
+    height: auto;
+}
+
+
+
+
+/* Aquí le decimos como será hasta que la página pase de 768px */
+@media (max-width: 768px) {
+
+    /* Modificamos el texto para que sea más legible */
+    h1{
+        font-size: 60px;
+    }
+
+}
+
+/* Aquí le decimos como será hasta que la página pase de 992px */
+@media (max-width: 992px) {
+
+    #map {
+        height: 50rem;
+    }
+}
+
+@media (max-width: 1200px) {
+
+  
+}
+
+@media (max-width: 1400px) {
+
+}
