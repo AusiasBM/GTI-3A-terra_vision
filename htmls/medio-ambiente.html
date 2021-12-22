@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
     
+
+
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
@@ -46,6 +48,24 @@
             </style>
         
     <script src="https://cdn.jsdelivr.net/gh/jieter/Leaflet.Sync/L.Map.Sync.min.js"></script>
+
+    <!-- Plugins leafle ******************************************************************************************************************* -->
+
+        <!-- Fullscreen -->
+        <link rel="stylesheet" href="../plugins/leaflet.fullscreen-master/Control.FullScreen.css" />
+        <script src="../plugins/leaflet.fullscreen-master/Control.FullScreen.js"></script>
+
+        <!-- MiniMapa -->
+        <link rel="stylesheet" href="../plugins/Leaflet-MiniMap-master/src/Control.MiniMap.css" />
+        <script src="../plugins/Leaflet-MiniMap-master/src/Control.MiniMap.js" type="text/javascript"></script>
+
+        <!-- Icon Layers -->
+        <script type="text/javascript" src="../plugins/Leaflet-IconLayers-master/examples/providers.js"></script>
+        <script type="text/javascript" src="../plugins/Leaflet-IconLayers-master/src/iconLayers.js"></script>
+        <link rel="stylesheet" href="../plugins/Leaflet-IconLayers-master/src/iconLayers.css">
+
+    <!-- Plugins leafle ******************************************************************************************************************* -->
+
 </head>
 <body>    
     
@@ -65,6 +85,10 @@
                     zoom: 12,
                     zoomControl: true,
                     preferCanvas: false,
+                    fullscreenControl: true,
+                    fullscreenControlOptions: {
+                        position: 'topleft'
+                    },
                 }
             );
 
@@ -114,6 +138,10 @@
                     zoom: 12,
                     zoomControl: true,
                     preferCanvas: false,
+                    fullscreenControl: true,
+                    fullscreenControlOptions: {
+                        position: 'topleft'
+                    },
                 }
             );
 
@@ -157,5 +185,61 @@
                 layer_control_0472bdcc01cf463ebca60c24cafb6bd2.overlays,
                 {"autoZIndex": true, "collapsed": true, "position": "topright"}
             ).addTo(map_3c2598b2f4174d1b84ff0df7f9461aec);
-        
+
+            // Plugins leaflet *******************************************************************************************************************
+
+                // Mini-Mapa
+                var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+                var osmAttrib='Map data &copy; OpenStreetMap contributors';
+                var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13, attribution: osmAttrib });
+                var miniMap = new L.Control.MiniMap(osm2, { toggleDisplay: true }).addTo(map_f81af76f0e634267980b7f0ca443db3c);
+
+                // Icon Layers
+                var layers = [];
+                for (var providerId in providers) {
+                    layers.push(providers[providerId]);
+                }
+    
+                layers.push({
+                    layer: {
+                        onAdd: function() {},
+                        onRemove: function() {}
+                    },
+                    title: 'empty'
+                })
+    
+                var ctrl = L.control.iconLayers(layers).addTo(map_f81af76f0e634267980b7f0ca443db3c);
+
+                
+
+            // Plugins leaflet *******************************************************************************************************************
+
+            // Plugins leaflet *******************************************************************************************************************
+
+                // Mini-Mapa
+                var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+                var osmAttrib='Map data &copy; OpenStreetMap contributors';
+                var osm2 = new L.TileLayer(osmUrl, {minZoom: 0, maxZoom: 13, attribution: osmAttrib });
+                var miniMap = new L.Control.MiniMap(osm2, { toggleDisplay: true }).addTo(map_3c2598b2f4174d1b84ff0df7f9461aec);
+
+                // Icon Layers
+                var layers = [];
+                for (var providerId in providers) {
+                    layers.push(providers[providerId]);
+                }
+    
+                layers.push({
+                    layer: {
+                        onAdd: function() {},
+                        onRemove: function() {}
+                    },
+                    title: 'empty'
+                })
+    
+                var ctrl = L.control.iconLayers(layers).addTo(map_3c2598b2f4174d1b84ff0df7f9461aec);
+
+                
+
+            // Plugins leaflet *******************************************************************************************************************
+
 </script>

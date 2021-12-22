@@ -19,10 +19,11 @@ html{
 }
 
 body{
-    background-image: url(../imgs/bg.jpg);
+    /* background-image: url(../imgs/bg.jpg);
     background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    background-color: #111111;
 }
 
 .container-fluid{ /* Esto lo ponemos para que el menú lateral de la landing page este totalmente pegado al borde */
@@ -47,12 +48,22 @@ h2{
     font-weight: 600;
 }
 
+h1, h2, h3, h4{
+    color: white;
+}
+
+
 .logo {
     width: 170px;
     height: auto;
 }
 
+.shadow{
 
+    background: #eee;
+    box-shadow: 0 8px 8px -4px lightblue;
+
+}
 
 
 /* Aquí le decimos como será hasta que la página pase de 768px */
