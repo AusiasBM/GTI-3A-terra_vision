@@ -11,7 +11,9 @@
 
 *{
     font-family: 'Poppins', sans-serif;
+    
 }
+
 
 html{
     /* Sirve para que haga el scroll suave*/
@@ -23,7 +25,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat; */
-    background-color: #111111;
+    background-color: rgb(31, 30, 7)
 }
 
 .container-fluid{ /* Esto lo ponemos para que el menú lateral de la landing page este totalmente pegado al borde */
@@ -48,7 +50,7 @@ h2{
     font-weight: 600;
 }
 
-h1, h2, h3, h4{
+h1, h2, h3, h4, h5, p, h6, hr{
     color: white;
 }
 
@@ -58,11 +60,18 @@ h1, h2, h3, h4{
     height: auto;
 }
 
-.shadow{
+.bg-tarjetas{
+    background-color: rgb(56, 59, 79);
+}
 
-    background: #eee;
-    box-shadow: 0 8px 8px -4px lightblue;
+.btn-primary{
+    background-color: rgb(255, 200, 252);
+    color: rgb(56, 59, 79);
+}
 
+.btn-primary:hover{
+    background-color: rgb(56, 59, 79);
+    color: white;
 }
 
 
